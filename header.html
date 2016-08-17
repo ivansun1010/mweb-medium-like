@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="baidu-site-verification" content="leMBunB40k" />
+    <link rel="shortcut icon" href="/favicon.ico">
     <title>
   {% if pageTitle.length %}  
   {{ pageTitle }}
@@ -20,12 +22,30 @@
   <script src="asset/highlightjs/highlight.pack.js"></script>
   <link href="asset/highlightjs/styles/github.css" media="screen, projection" rel="stylesheet" type="text/css">
   <script>hljs.initHighlightingOnLoad();</script>
-<script type="text/javascript">
-  function before_search(){
-    var searchVal = 'site:{{ siteDomain }} ' + document.getElementById('search_input').value;
-    document.getElementById('search_q').value = searchVal;
-    return true;
-  }
+<!-- 百度抓取推送-->
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<!--百度统计代码 -->
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "//hm.baidu.com/hm.js?0c5dd6b79b4a4141fc9c6230e3e28771";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
 </script>
   </head>
   <body class="antialiased hide-extras">
@@ -50,7 +70,7 @@
           <li>
 <form target="_blank" onsubmit="return before_search();" action="http://google.com/search" method="get">
     <input type="hidden" id="search_q" name="q" value="" />
-    <input tabindex="1" type="search" id="search_input"  placeholder="Search"/>
+    <input tabindex="1" type="search" id="bdcsMain"  placeholder="Search"/>
 </form>
 </li>
           </ul>
